@@ -2,7 +2,16 @@
 
 sudo apt update
 sudo apt install nginx -y
-sudo apt install nodejs -y
+
+cd /app
+
+# install npm
 sudo apt install npm -y
-sudo npm install pm2 -g
+
+# install correct version of nodejs
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# npm install pm2 -g
+npm install
 npm start

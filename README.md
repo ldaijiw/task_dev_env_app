@@ -1,5 +1,9 @@
 # Setting Up a Dev Environment with Vagrant
 
+## Introduction
+
+This contains instructions for setting up a Dev Environment for a NodeJs Sample App
+
 ## Installation and Setup for Vagrant, VirtualBox, and Ruby
 
 **You will need to install Vagrant, VirtualBox, and Ruby in order to set up this Dev Environment**
@@ -57,7 +61,7 @@ In the same directory as the **Vagrantfile**, the following terminal commands ar
 
 [You can also refer here for any extra commands](https://gist.github.com/wpscholar/a49594e2e2b918f4d0c4)
 
-## Additional Setup
+## Additional Setup Instructions
 
 - This project primarily uses **JavaScript**, with some integration testing with **Ruby** and **Rake**
 
