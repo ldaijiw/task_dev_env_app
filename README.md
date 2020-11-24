@@ -33,8 +33,8 @@ Vagrant.configure("2") do |config|
 	config.hostsupdater.aliases = ["development.local"]
 
 	# sync folders to VM
-	config.vm.sync_folder "/app", "app"
-	config.vm.sync_folder "/environment", "environment"
+	config.vm.synced_folder "/app", "app"
+	config.vm.synced_folder "/environment", "environment"
 
 	# run provision bash script
 	config.vm.provision "shell", path: "provision.sh"
@@ -94,7 +94,8 @@ rake spec
 - Vagrant can use a bash script to make any necessary installations in the VM without requiring the user to write each commands
 - The bash script used is ``provision.sh`` and is executed in the last line of the **Vagrantfile** and carries out the following commands:
 	- ``sudo apt update``: Updates for Linux
-	- ``sudo apt install nginx -y``: Installs nginx with autoconfirmation ([nginx is an HTTP and reverse proxy server](https://nginx.org/en/))
+	- ``sudo apt install nginx -y``: Installs [nginx](https://nginx.org/en/) with autoconfirmation
 	- ``sudo apt install nodejs -y``: Installs [Node.js](https://nodejs.org/en/about/) with autoconfirmation
 	- ``sudo apt install npm -y``: Installs [npm](https://docs.npmjs.com/about-npm) with autoconfirmation
 	- ``sudo npm install pm2 -y``: Installs [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/) with autoconfirmation
+	- ``npm start``: Starts the application
