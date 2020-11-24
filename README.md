@@ -43,10 +43,31 @@ vagrant init
 
 ## Requirements
 
-- This project primarily uses **JavaScript**, with some integration testing with **Ruby** and ``rspec``
+- This project primarily uses **JavaScript**, with some integration testing with **Ruby** and **Rake**
 
 
 ### Setting Up Testing with Ruby
 
+Testing is carried out with the **Rake** testing framework with **Ruby**, used to ensure that everything is set up and running correctly.
+
 - In ``starter-code/environment/`` there is the ``spec-test`` folder which contains:
-	- 
+	- ``spec`` which contains the specific unit tests that ``rspec`` will refer to
+	- ``Gemfile`` which contains a list of gems (packages) that must be installed in order to run the tests
+	- ``Rakefile`` which contains the set of instructions to execute the tests
+	- ``.rspec`` which can be ignored for now
+
+
+**In order to install all the gems listed in Gemfile, first install bundler**
+
+- Bundler is Ruby's package manager, which can be installed in terminal with
+```bash
+gem install bundler
+```
+- After this is successfully carried out, ensure that the terminal's current working directory is ``starter-code/environment/spec-test`` so that it can refer to the ``Gemfile`` and run
+```bash
+bundle
+```
+- This will install all the gems listed in ``Gemfile``, the tests are now ready to be run with
+```bash
+rake spec
+```
