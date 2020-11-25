@@ -16,6 +16,14 @@ sudo apt update
 # Install specific release version 3.2.20 with autoconfirmation
 sudo apt install mongodb-org=3.2.20 -y
 
+# To prevent accidental apt upgrades
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+
+
 # Configure IP for MongoDB
 sudo sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 
